@@ -19,7 +19,11 @@ org_settings:
   server_settings:
     server_url: $FLEET_URL
   org_info:
-    org_name: Fleet
+    org_name: The Home Depot
+  webhook_settings:
+    activities_webhook:
+      enable_activities_webhook: true
+      destination_url: https://some-tines-workflow.com
   secrets:
     - secret: "$FLEET_GLOBAL_ENROLL_SECRET"
   features:
