@@ -10,6 +10,7 @@
 name: New Hires
 policies:
   - path: ../lib/macos/policies/macos-device-health.policies.yml
+  - path: ../lib/windows/policies/all-windows-updates-installed.policies.yml
 queries:
   - path: ../lib/all/queries/collect-usb-devices.queries.yml
   - path: ../lib/all/queries/collect-failed-login-attempts.queries.yml
@@ -20,6 +21,13 @@ controls:
     - path: ../lib/macos/scripts/remove-zoom-artifacts.script.sh
     - path: ../lib/macos/scripts/set-timezone.script.sh
 team_settings:
+  webhook_settings:
+    failing_policies_webhook:
+      enable_failing_policies_webhook: true
+      destination_url: https://oktaworkflows.com
+      host_batch_size: 0
+      policy_id:
+        - 1
   secrets:
     - secret: "$FLEET_NEW_HIRES_ENROLL_SECRET"
   features:
